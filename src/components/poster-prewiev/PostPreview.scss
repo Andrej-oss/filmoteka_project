@@ -1,0 +1,15 @@
+.my-post-preview{
+  display: block;
+  flex-direction: row;
+  min-height: 400px;
+  color: grey;
+  &-post{
+    display: block;
+    text-align: center;
+    width: 200px;
+    &-title{
+       font-weight: bold;
+
+    }
+  }
+}

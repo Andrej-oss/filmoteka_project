@@ -1,26 +1,56 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import MovieListCard from "./components/movie-list-card/MovieListCard";
+import { BrowserRouter as Router,
+    Switch,
+    Route,
+    Link} from "react-router-dom";
+import {getGenres, getMovies, getCredits} from "./actions";
+import {connect, Provider} from "react-redux";
+import Header from "./components/header/Header";
+import MoviesList from "./components/movies-list/MoviesList";
+import {moviesStore} from "./store/Store";
+import { DarkContextWrapper } from "./context/DarkContextWrapper";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+function App(props){
+     const { movies,genres,credits, getCredits } = props;
+return (
+    <DarkContextWrapper>
+    <Provider store={moviesStore}>
+    <Router>
+        <Header/>
+        <Switch>
+            <Route path="/:sortOption/:pageId/:id"
+                render={(routerProps) => {
+                    return (<MovieListCard {...routerProps} movies={movies} genres={genres} credits={credits} getCredits={getCredits} exact>
+                    </MovieListCard>);
+            }}>
+            </Route>
+            <Route path='/' exact
+                   render = {(routerProps) =>  <MoviesList  {...routerProps} exact></MoviesList>
+                   }>
+            </Route>
+            <Route path='/:sortOption/:pageId'
+                   render = {(routerProps) =>  <MoviesList  {...routerProps} exact></MoviesList>
+             }>
+            </Route>
+        </Switch>
+    </Router>
+    </Provider>
+    </DarkContextWrapper>
+);
 }
-
-export default App;
+const mapStateToProps = (state) => {
+    const { movies, genres, credits} = state;
+    return {
+        movies,
+        genres,
+        credits
+    }
+};
+const mapDispatchToProps =  ({
+    getGenres,
+    getMovies,
+    getCredits
+});
+export default connect(mapStateToProps,mapDispatchToProps)(App);

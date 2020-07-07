@@ -1,0 +1,47 @@
+.movie-list{
+  &.dark{
+    background-color: black;
+  }
+  &-movie{
+    width: 70%;
+    background-color: white;
+    border-radius: 2%;
+    display: flex;
+    justify-content: flex-start;
+    margin: 20px 10px 10px 200px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 600px ;
+    color: white;
+
+    &-poster{
+      margin: 10px 100px 50px 10px;
+    }
+    &-content{
+      margin: 10px 10px 10px 10px;
+      &-stars{
+        height: 50px;
+        width: 200px;
+      }
+      &-block{
+        &-overview{
+          margin: 100px 10px 10px 10px;
+          text-align: left;
+        }
+        &-video{
+          margin: 10px 10px 10px 10px;
+          text-align: left;
+        }
+      }
+    }
+    &-actor{
+      margin: 0 auto;
+      width: 800px;
+      &-content{
+        display: flex;
+        justify-content: start;
+        overflow-x: scroll;
+      }
+    }
+  }
+}
