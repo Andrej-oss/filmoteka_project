@@ -102,6 +102,7 @@ componentDidUpdate(prevProps, prevState, snapshot) {
                          pages &&   pages.map((page,index) =>
                              (lastPage >= page.id)?
                              <Link
+                                 key={page.id}
                                  to={`/${sortOption}/${page.id}`}
                                  style={{ textDecoration: 'none'}}>
                                  <li type="button"
@@ -109,6 +110,7 @@ componentDidUpdate(prevProps, prevState, snapshot) {
                                      className={isActivePage && (activePage===page.id)?
                                      "active":"page-item"}>
                                 <a className="page-link"
+                                   key={page.id}
                                    onClick={(sortOption || searchOption?
                                        this.pageGetSortedMovies(sortOption, searchOption, page.id):
                                        this.pageGetMovies(page.id))}>{page.id}
