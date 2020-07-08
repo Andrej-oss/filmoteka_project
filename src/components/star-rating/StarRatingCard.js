@@ -10,6 +10,7 @@ function StarRatingCard(props) {
                 const vote = i+1;
                 return <FaStar
                     color={rating >= vote? "gold" : "grey"}
+                    key={star.id}
                     size={20}/>})}
         </div>
     );
