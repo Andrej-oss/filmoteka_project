@@ -62,7 +62,7 @@ class MoviesList extends PureComponent {
                                     <span className="sr-only">Loading...</span>
                                 </div>
                             </div> }
-                            {movies.length && <div className="filmoteka-movies-list-posts">
+                            {!!movies.length && <div className="filmoteka-movies-list-posts">
                                 {
                                     movies.map(movie =>
                                         <div className='filmoteka-movies-list-posts-post'
