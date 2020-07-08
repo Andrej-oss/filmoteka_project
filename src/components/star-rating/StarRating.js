@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import stars from "../../img/5star-rating.gif"
 import '../star-rating/StarRating.scss'
 import { FaStar } from "react-icons/all";
 
@@ -14,7 +13,7 @@ function StarRating(props) {
                    const vote = i+1;
                     return <FaStar
                         color={rating >= vote? "gold" : "grey"}
-                        key={star.id}
+                        key={Math.random()*100}
                         size={20}/>})}
                  <div>Voted: {vote_count}</div>
             </div>
