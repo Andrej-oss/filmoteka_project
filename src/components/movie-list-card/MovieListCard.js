@@ -3,20 +3,10 @@ import StarRating from "../star-rating/StarRating";
 import ActorCard from "../actor-card/ActorCard";
 import {MovieComments} from "../movie-comments/MovieComments";
 import { DarkThemeContext } from "../../context";
-import { connect } from "react-redux";
 import YouTube from "react-youtube";
 
 import '../movie-list-card/MovieListCard.scss'
 import {Link} from "react-router-dom";
-import {
-    getComments,
-    getCredits,
-    getDetailsMovie,
-    getGenres,
-    getMovies,
-    getSearchMovie,
-    getSortedMovies, getTrailer
-} from "../../actions";
 
 
 class MovieListCard extends PureComponent{

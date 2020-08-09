@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {withRouter} from "react-router";
 import PostPreview from "../poster-prewiev/PostPreview";
 import {Link} from "react-router-dom";
+import { DarkThemeContext } from "../../context";
 
 import '../actor-movie-list/ActorMovieList.scss'
 import avatarImg from '../../img/awaiting-image-profile-1000-1000.jpg'
@@ -30,12 +31,13 @@ componentDidUpdate(prevProps, prevState, snapshot) {
 
     render() {
         debugger
-        const { moviesActor, actor, genres, searchOption, match:{params}, sortOption } = this.props;
+        const { moviesActor, actor, genres } = this.props;
         console.log(moviesActor)
-        const { birthday,deathday,name,biography,popularity,place_of_birth,profile_path } = actor;
+        const { birthday,deathday,name,biography,place_of_birth,profile_path } = actor;
         const actorImg = `https://image.tmdb.org/t/p/w200${profile_path}`;
         return (
-            <div className="actor-list">
+            <DarkThemeContext.Consumer>
+          { value => <div className={`actor-list ${value.isDarkTheme && 'dark'}`}>
                 <div className="actor-list-biography">
                     {profile_path ? <img src={actorImg} className="actor-list-biography-img"/> :
                     <img src={avatarImg} style={{width: '200px', height: '200px'}}/>}
@@ -76,8 +78,8 @@ componentDidUpdate(prevProps, prevState, snapshot) {
                         }
                     </table>
                 </div>
-                
-            </div>
+            </div>}
+            </DarkThemeContext.Consumer>
         );
     }
 }
