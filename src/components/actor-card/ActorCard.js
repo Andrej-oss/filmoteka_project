@@ -4,7 +4,6 @@ import imdDefault from "../../img/awaiting-image-profile-1000-1000.jpg";
 import "../actor-card/ActorCard.scss";
 
 function ActorCard(props) {
-    debugger
     const { actor } = props;
     const {cast_id,
     character,

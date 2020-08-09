@@ -1,0 +1,25 @@
+.actor-list{
+  width: 1100px;
+  min-height: 800px;
+  border-radius: 1%;
+  margin: 20px 10px 10px 200px;
+  background-color: lightgrey;
+  &-biography{
+    display: flex;
+    justify-content: start;
+    &-img{
+      border-radius: 50px;
+      margin: 10px 10px 10px 10px;
+      position: absolute;
+    }
+    &-content{
+      margin: 10px 10px 10px 300px;
+      &-biography{
+        margin-top: 200px;
+      }
+      &-date{
+        text-align: center;
+      }
+    }
+  }
+}

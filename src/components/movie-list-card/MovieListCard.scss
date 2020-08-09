@@ -1,32 +1,37 @@
 .movie-list{
   &.dark{
     background-color: black;
+    color: white;
   }
   &-movie{
     width: 70%;
-    background-color: white;
+    background-color: black;
     border-radius: 2%;
-    display: flex;
-    justify-content: flex-start;
     margin: 20px 10px 10px 200px;
     background-repeat: no-repeat;
-    background-size: cover;
-    min-height: 600px ;
+    background-size: 1000px 400px;
+    min-height: 200px ;
     color: white;
-
+    &.trailer{
+     margin: 100px 100px 100px 100px;
+      position: absolute;
+    }
     &-poster{
-      margin: 10px 100px 50px 10px;
+      margin: 300px 200px 50px 10px;
     }
     &-content{
-      margin: 10px 10px 10px 10px;
+      text-align: right;
+      margin: -350px 10px 10px 10px;
       &-stars{
+        display: flex;
+        justify-content: center;
         height: 50px;
         width: 200px;
       }
       &-block{
-        &-overview{
-          margin: 100px 10px 10px 10px;
-          text-align: left;
+        text-align: right;
+               &-overview{
+          margin: 10px 10px 10px 10px;
         }
         &-video{
           margin: 10px 10px 10px 10px;
@@ -44,4 +49,15 @@
       }
     }
   }
+  &-filmography{
+    margin: 10px 10px 10px 10px;
+  }
+}
+th{
+  margin: 5px 5px 5px 5px;
+  padding: 5px 5px 5px 5px;
+}
+tr{
+  margin: 5px 5px 5px 5px;
+  padding: 5px 5px 5px 5px;
 }

@@ -31,7 +31,6 @@ class PostPreview extends Component{
       if (!release_date) {
           release_date = " -0- "
       }
-        debugger
         const arrayDate = release_date.split('-')
         arrayDate.splice(1,1,mapMonth.find(mon => {
             if (mon.id == parseInt(arrayDate[1],10)){
